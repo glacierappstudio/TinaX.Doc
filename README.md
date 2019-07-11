@@ -3,6 +3,7 @@
 
 [![LICENSE](https://img.shields.io/badge/license-NPL%20(The%20996%20Prohibited%20License)-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 <a href="https://996.icu"><img src="https://img.shields.io/badge/link-996.icu-red.svg" alt="996.icu"></a>
+[![LICENSE](https://camo.githubusercontent.com/3867ce531c10be1c59fae9642d8feca417d39b58/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f636f6f6b6965592f596561726e696e672e737667)](https://github.com/yomunsam/TinaX/blob/master/LICENSE)
 
 ------
 
@@ -55,6 +56,10 @@ VFS支持热更新。
 - 全局时间任务调度
 - ……
 
+
+## 说明
+
+?> TinaX Framework 的开发时间跨度有点长，其中可能包含一些作者刚接触Unity不久的萌新时期的不明所以的奇怪代码（虽然它跑起来并没有什么问题），作者也会不断的去找到这些奇怪的代码并优化它。如果您发现有什么匪夷所思的地方，欢迎提PR和Issues，谢谢。
 
 ## 开源引用
 
