@@ -6,7 +6,7 @@
 
 ## 概述：LuaMainRuntime 和 LuaBehaviour
 
-[LuaBehaviour](lua_component_luabehaviour) 是为了让Lua代码像`MonoBehaviour`一样可以作为`Component`被`GameObject`绑定而开发的一个组件。
+[LuaBehaviour](/api/system/lua_runtime/luabehaviour) 是为了让Lua代码像`MonoBehaviour`一样可以作为`Component`被`GameObject`绑定而开发的一个组件。
 
 `LuaBehaviour`的环境和TinaX的Lua主运行环境是相对独立的，在使用上也有着一定的区别：
 

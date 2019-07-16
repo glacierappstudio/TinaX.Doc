@@ -6,8 +6,10 @@
   - [快速上手：使用Lua语言开发游戏](/guide/quickstart/quickstart_lua_1)
   - [快速上手： 让Lua与GameObject发生关系](/guide/quickstart/quickstart_lua_2)
 - API
-  - System
+  - [System](/api/system/system)
     - [Lua Runtime](/api/system/lua_runtime/lua_runtime)
+    - [LuaBehaviour](/api/system/lua_runtime/luabehaviour)
+    - [VFS 虚拟文件系统](/api/system/vfs/vfs)
   - C Sharp
     - [扩展 GameObject](/api/cs/cs_ext_unityengine_gameobject)
     - [扩展 String](/api/cs/cs_ext_system_string)
