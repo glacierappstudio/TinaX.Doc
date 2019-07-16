@@ -186,3 +186,9 @@ namespace Nekonya
 运行游戏，效果如下：
 
 ![1562874954887](assets/1562874954887.png)
+
+## 下一步
+
+接下来，我们看看如何使用lua语言加入到我们的游戏开发中
+
+### [4. 快速上手： 使用Lua语言开发游戏](/guide/quickstart/quickstart_lua_1)

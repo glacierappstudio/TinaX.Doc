@@ -3,6 +3,8 @@
   - [快速上手1: Console Hello World](/guide/quickstart/quickstart1)
   - [快速上手2: UI Hello World](/guide/quickstart/quickstart2) 
   - [快速上手3: 与UI产生交集](/guide/quickstart/quickstart3) 
+  - [快速上手：使用Lua语言开发游戏](/guide/quickstart/quickstart_lua_1)
+  - [快速上手： 让Lua与GameObject发生关系](/guide/quickstart/quickstart_lua_2)
 - API
   - System
     - [Lua Runtime](/api/system/lua_runtime/lua_runtime)
