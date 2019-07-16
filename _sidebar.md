@@ -4,6 +4,8 @@
   - [快速上手2: UI Hello World](/guide/quickstart/quickstart2) 
   - [快速上手3: 与UI产生交集](/guide/quickstart/quickstart3) 
 - API
+  - System
+    - [Lua Runtime](/api/system/lua_runtime/lua_runtime)
   - C Sharp
     - [扩展 GameObject](/api/cs/cs_ext_unityengine_gameobject)
     - [扩展 String](/api/cs/cs_ext_system_string)
