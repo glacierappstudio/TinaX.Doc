@@ -5,16 +5,24 @@ TinaX中对UnityEngine类进行了一些常用的扩展。
 
 - 命名空间： `TinaX`
 
+## IsNull 是否为空
 
+用例：
+
+``` csharp
+var b = gameObject.IsNull();
+```
+
+?> 我们在C#中，可以使用 `gameObject == null` 来判断gameobject**是否被销毁**（Destroy），这是因为Unity重载了`==`运算符，实际上这时候gameObject对象本身是存在的。这就意味着，如果你在lua中同样用`gameObject == nil` 来判断gameobject是否被销毁，始终会得到`true`，即使这个gameObject已经被Destroy了。所以在lua中，我们应该使用`gameObject:IsNull()` 来判断
 
 ## DestroySelf 销毁自身
 
 
-用法：
+用例：
 
 ``` csharp
-    GameObject.Find("cube").DestroySelf();
-
+GameObject.Find("cube").DestroySelf();
+GameObject.Find("cube").DestroySelf(1.0f); //delay time
 ```
 
 
@@ -22,11 +30,10 @@ TinaX中对UnityEngine类进行了一些常用的扩展。
 
 相当于`GameObject.DestroyImmediate();` 
 
-用法：
+用例：
 
 ``` csharp
-    GameObject.Find("cube").DestroyNow();
-
+GameObject.Find("cube").DestroyNow();
 ```
 
 
@@ -38,13 +45,12 @@ TinaX中对UnityEngine类进行了一些常用的扩展。
 - 返回值：`GameObject` 返回对象自身
 
 
-用法：
+用例：
 
 ``` csharp
-    var go = GameObject.Find("cube");
-    go.SetActive(false);
-    go.Show();
-
+var go = GameObject.Find("cube");
+go.SetActive(false);
+go.Show();
 ```
 
 
@@ -55,13 +61,12 @@ TinaX中对UnityEngine类进行了一些常用的扩展。
 - 返回值：`GameObject` 返回对象自身
 
 
-用法：
+用例：
 
 ``` csharp
-    var go = GameObject.Find("cube");
-    go.Hide();
-    go.Show();
-
+var go = GameObject.Find("cube");
+go.Hide();
+go.Show();
 ```
 
 
@@ -75,10 +80,10 @@ TinaX中对UnityEngine类进行了一些常用的扩展。
 - 返回值：`GameObject` 返回对象自身
 
 
-用法：
+用例：
 
 ``` csharp
-    var go = GameObject.Find("cube").Name("box");
+var go = GameObject.Find("cube").Name("box");
 ```
 
 
@@ -93,10 +98,10 @@ TinaX中对UnityEngine类进行了一些常用的扩展。
 - 返回值：`GameObject` 返回对象自身
 
 
-用法：
+用例：
 
 ``` csharp
-    var go = GameObject.Find("cube").DontDestroy();
+var go = GameObject.Find("cube").DontDestroy();
 ```
 
 
@@ -104,29 +109,29 @@ TinaX中对UnityEngine类进行了一些常用的扩展。
 
 ## GetComponentOrAdd 获取组件，如果不存在则新建
 
-
-
 - 返回值：`T`  获取或创建的Component对象
 
 
-用法：
+用例：
 
 ``` csharp
-    var image = gameObject.GetComponentOrAdd<Image>();
+var image = gameObject.GetComponentOrAdd<Image>();
+var text = gameObject.GetComponentOrAdd(typeof(Text));
 ```
+
 
 
 ## RemoveComponentIfExists 如果指定组件存在，则移除它
 
-
-
 - 返回值：`GameObject`  返回对象自身
 
 
-用法：
+用例：
 
 ``` csharp
-    gameObject.RemoveComponentIfExists<Image>();
+gameObject.RemoveComponentIfExists<Image>();
+gameObject.RemoveComponentIfExists(typeof(Image));
+gameObject.RemoveComponentIfExists("Image");
 ```
 
 
@@ -139,10 +144,23 @@ TinaX中对UnityEngine类进行了一些常用的扩展。
 - 返回值：`GameObject`  返回对象自身
 
 
-用法：
+用例：
 
 ``` csharp
-    gameObject.RemoveComponentsIfExists<Image>();
+gameObject.RemoveComponentsIfExists<Image>();
+gameObject.RemoveComponentsIfExists(typeof(Image));
+```
+
+## HasComponent 组件是否存在
+
+-   返回值：`bool` 如果存在，返回true
+
+用例：
+
+```csharp
+var b = gameObject.HasComponent<Image>();
+var b = gameObject.HasComponent(typeof(Image));
+var b = gameObject.HasComponent("Image");
 ```
 
 
@@ -154,34 +172,39 @@ TinaX中对UnityEngine类进行了一些常用的扩展。
 - 返回值：`GameObject`  返回对象自身
 
 
-用法：
+用例：
 
 ``` csharp
-    gameObject.SetLayerRecursive(5);
+gameObject.SetLayerRecursive(5);
 ```
 
 
 
 
-## FindOrCreateGo 获取子GameObject，如果不存在则新建
+## FindOrCreateGameObject 获取子GameObject，如果不存在则新建
 
 
 
 - 返回值：`GameObject`  寻找到或新建的指定名称的子GameObject
 
 
-用法：
+用例：
 
 ``` csharp
-    var sub_Go = gameObject.FindOrCreateGo("sub");
+var sub_Go = gameObject.FindOrCreateGameObject("sub");
+var sub_Go = gameObject.FindOrCreateGameObject("sub",typeof(Canvas)); //params System.Type[]
 ```
 
-非扩展用法
+## CreateGameObject 为当前GameObject创建子级GameObject
+
+-   返回值：`GameObject` 新建的子级GameObject对象
+
+用例：
 
 ``` csharp
-    var sub_Go = GameObjectHelper.FindOrCreateGo("sub");
+var sub_go = gameObject.CreateGameObject("sub");
+var sub_go = gameObject.CreateGameObject("sub",typeof(Canvas)); //params System.Type[]
 ```
-
 
 
 
@@ -189,11 +212,30 @@ TinaX中对UnityEngine类进行了一些常用的扩展。
 
 
 
-用法：
+用例：
 
 ``` csharp
-    gameObject.SetParent(GameObject.Find("Camera"));
+gameObject.SetParent(GameObject.Find("Camera"));
 ```
+
+
+
+## 设置常用的Transform属性
+
+用例：
+
+``` csharp
+gameObject.SetPosition(Vector3.zero);
+gameObject.SetLocalPosition(Vector3.zero);
+gameObject.SetLocalScale(Vector3.one);
+//......
+```
+
+## 
+
+
+
+
 
 ------
 
@@ -209,7 +251,6 @@ TinaX中对UnityEngine类进行了一些常用的扩展。
         .Hide();
 
 ```
-
 
 ------
 
