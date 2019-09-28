@@ -11,6 +11,7 @@
     - [LuaBehaviour](/api/system/lua_runtime/luabehaviour)
     - [VFS 虚拟文件系统](/api/system/vfs/vfs)
     - [UIKit](/api/system/uikit/uikit)
+    - [I18N 国际化](/api/system/i18n/i18n)
   - C Sharp
     - [扩展 GameObject](/api/cs/cs_ext_unityengine_gameobject)
     - [扩展 String](/api/cs/cs_ext_system_string)
